@@ -16,6 +16,10 @@ android {
     defaultConfig {
         minSdk = 26
     }
+
+    kotlin {
+        jvmToolchain(17)
+    }
 }
 
 dependencies {
@@ -23,6 +27,7 @@ dependencies {
 
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.material.icons)
 
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
@@ -33,4 +38,9 @@ dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:database"))
     implementation(project(":core:ui"))
+
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockk)
+    testImplementation(libs.turbine)
 }
